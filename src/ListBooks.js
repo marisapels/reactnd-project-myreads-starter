@@ -18,6 +18,7 @@ class ListBooks extends Component {
                                 title={shelve.title}
                                 shelf={shelve.id}
                                 books={this.props.books}
+                                onChangeShelf={this.props.onChangeShelf}
                             />
                         </div>
                     ))}
