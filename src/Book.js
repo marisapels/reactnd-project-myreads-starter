@@ -2,18 +2,20 @@ import React, { Component } from 'react'
 
 class Book extends Component {
     render(){
-            const title = this.props.title
-            const authors = this.props.authors.join(", ")
-            const backgroundImage = this.props.backgroundImage
+            const book = this.props.book
+            const title = book.title
+            const authors = book.authors.join(", ")
+            const backgroundImage = book.imageLinks.smallThumbnail
             const coverStyle =  {width: 128, height: 192, backgroundImage: 'url(' + backgroundImage + ')'}
-
+            const shelf = book.shelf
+          
 
             return (
                 <div className="book">
                 <div className="book-top">
                   <div className="book-cover" style={ coverStyle }></div>
                   <div className="book-shelf-changer">
-                    <select>
+                    <select defaultValue={shelf}>
                       <option value="none" disabled>Move to...</option>
                       <option value="currentlyReading">Currently Reading</option>
                       <option value="wantToRead">Want to Read</option>
