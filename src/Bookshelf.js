@@ -12,11 +12,11 @@ class BookShelf extends Component {
                   <div className="bookshelf-books">
                     <ol className="books-grid">
                     {this.props.books.filter(book => book.shelf === id).map(book => (
-                        <li key={book.id}>
+                        <li key={book.title}>
                             <Book
                                 title={book.title}
                                 authors={book.authors}
-                                backgroundImage={book.backgroundImage}
+                                backgroundImage={book.imageLinks.smallThumbnail}
                             />
                         </li>
                     ))}
