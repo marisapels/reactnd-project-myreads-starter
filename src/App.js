@@ -1,9 +1,9 @@
-import React from 'react'
-import * as BooksAPI from './BooksAPI'
-import './App.css'
-import { Route } from 'react-router-dom'
-import ListBooks from './ListBooks'
-import SearchBooks from './SearchBooks'
+import React from 'react';
+import * as BooksAPI from './BooksAPI';
+import './App.css';
+import { Route } from 'react-router-dom';
+import ListBooks from './ListBooks';
+import SearchBooks from './SearchBooks';
 
 class BooksApp extends React.Component {
   myShelves = [
@@ -23,33 +23,31 @@ class BooksApp extends React.Component {
 
   state = {
     myBooks: []
-  }
+  };
 
   componentDidMount(){
     BooksAPI.getAll().then((myBooks) =>{
-    this.setState({ myBooks })
-    })
+    this.setState({ myBooks });
+    });
   }
 
   changeShelf = (book, shelf) => {
     BooksAPI.update(book,shelf).then(() =>{
-    book.shelf = shelf
+    book.shelf = shelf;
     this.setState((state) => ({
       myBooks: state.myBooks.filter(item => item.id !== book.id).concat([book])
-    }))})
-  }
+    }))});
+  };
     
-
   render() {
     return (
       <div className="app">
-
       <Route exact path="/" render={() =>(
         <ListBooks 
-        title="MyReads" 
-        shelves={this.myShelves} 
-        books={this.state.myBooks} 
-        onChangeShelf={this.changeShelf} 
+          title="MyReads" 
+          shelves={this.myShelves} 
+          books={this.state.myBooks} 
+          onChangeShelf={this.changeShelf} 
         />
       )}/>
 

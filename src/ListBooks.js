@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 class ListBooks extends Component {
     render(){
-            const title = this.props.title
+            const title = this.props.title;
 
             return (
                 <div className="list-books">

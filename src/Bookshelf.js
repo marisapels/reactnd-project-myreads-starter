@@ -3,8 +3,8 @@ import Book from './Book'
 
 class BookShelf extends Component {
     render(){
-            const title = this.props.title
-            const id = this.props.id
+            const title = this.props.title;
+            const id = this.props.id;
 
             return (
                 <div className="bookshelf">

@@ -4,21 +4,21 @@ import React, { Component } from 'react'
 
 class Book extends Component {
     render(){
-            const book = this.props.book
-            const title = book.title
+            const book = this.props.book;
+            const title = book.title;
 
-            var authors = []
+            var authors = [];
             if (book.authors){
-              authors = book.authors.join(", ")
+              authors = book.authors.join(", ");
             }
 
-            var backgroundImage
+            var backgroundImage;
             if (book.imageLinks){
-              backgroundImage = book.imageLinks.smallThumbnail
+              backgroundImage = book.imageLinks.smallThumbnail;
             }
-            
-            const coverStyle =  {width: 128, height: 192, backgroundImage: 'url(' + backgroundImage + ')'}
-            const shelf = book.shelf
+
+            const coverStyle =  {width: 128, height: 192, backgroundImage: 'url(' + backgroundImage + ')'};
+            const shelf = book.shelf;
           
 
             return (
