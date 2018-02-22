@@ -37,7 +37,6 @@ class BooksApp extends React.Component {
     this.setState((state) => ({
       myBooks: state.myBooks.filter(item => item.id !== book.id).concat([book])
     }))})
-    
   }
     
 
@@ -53,7 +52,14 @@ class BooksApp extends React.Component {
         onChangeShelf={this.changeShelf} 
         />
       )}/>
-      <Route path="/search" component={SearchBooks} />
+
+      <Route  path="/search" render={() =>(
+        <SearchBooks 
+            onChangeShelf={this.changeShelf}
+            books={this.state.myBooks} 
+        />
+      )}/>
+
       </div>
     )
   }
